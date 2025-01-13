@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+
+# Logs
+logs/
+
+# Environment Files
+*.env
+
