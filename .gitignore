@@ -6,6 +6,10 @@ __pycache__/
 env/
 venv/
 
+# Configs
+configs/aws*
+configs/gcp*
+
 # Jupyter Notebooks
 .ipynb_checkpoints/
 
