@@ -13,6 +13,7 @@ project-batch-processing/
 │   ├── processed/             # Data after initial processing
 │   └── processed-form-cloud/  # Final transformed data ready for database loading
 ├── notebooks/                 # Jupyter notebooks for data exploration and validation
+│   ├── parquet_modified.ipynb # Transform the column names to fit in the BigQuery
 ├── scripts/                   # Python scripts for pipeline stages
 │   ├── extract_data.py        # Extract data from cloud storage
 │   ├── process_data.py        # Process the raw data
@@ -31,7 +32,7 @@ project-batch-processing/
 ## Steps in the Project
 
 ### 1. Download and Upload Uber Taxi Dataset
-The project starts with downloading the Uber Taxi Yellow dataset and uploading it to Google Cloud Storage after initial processing with PySpark. This step ensures the data is clean and ready for further transformations.
+The project starts with downloading the Uber Taxi Yellow dataset and uploading it to Google Cloud Storage after initial processing with PySpark. This step ensures the data is clean and ready for further transformations - of course, picking the columns we may use during our analysis.
 
 ### 2. Extract Cleaned Data
 Extract the cleaned Parquet files from Google Cloud Storage to a local directory for further processing.
@@ -95,9 +96,3 @@ Load the processed data into BigQuery:
 ```bash
 python scripts/load_to_bigquery.py
 ```
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
