@@ -1,0 +1,13 @@
+name: 'project_batch_processing'  # Name of your project
+version: '1.0'  # Version of your project
+profile: 'project_batch_processing'  # The name of your profile in profiles.yml
+
+# Paths to directories and settings
+source-paths: ["/home/mauricio/git/project-batch-processing/dbt/models"]  # Location of your DBT models (you can change the path)
+
+# Configure the target schema and other database details
+target-path: "/home/mauricio/git/project-batch-processing/dbt/models"  # This is where DBT will store compiled SQL files
+clean-targets:
+  - "target"
+  - "dbt_modules"
+  
