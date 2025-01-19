@@ -1,4 +1,6 @@
--- dbt/models/my_model.sql
 
-SELECT *
-FROM `your_project_id.your_dataset_name.some_table`
+
+  create or replace view `gcp-streaming-pipeline`.`project_parquet`.`my_model`
+  OPTIONS()
+  as SELECT * FROM `gcp-streaming-pipeline.project_parquet.cab_trips`;
+
