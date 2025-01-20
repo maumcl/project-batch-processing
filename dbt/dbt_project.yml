@@ -6,9 +6,6 @@ profile: 'project_batch_processing'  # The name of your profile in profiles.yml
 model-paths: ["/home/mauricio/git/project-batch-processing/dbt/models"]  # Location of your DBT models
 analysis-paths: [/home/mauricio/git/project-batch-processing/dbt/analysys"]  # Path for analysis files
 
-# Configure the target schema and other database details
-# target-path: "/home/mauricio/git/project-batch-processing/dbt/models"  # This is where DBT will store compiled SQL files
-
 clean-targets:
   - "target"
   - "dbt_modules"
