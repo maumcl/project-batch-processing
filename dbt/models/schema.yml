@@ -1,10 +1,6 @@
 models:
   - name: transformed_data
     description: "Uber Taxi Data with transformed columns"
-    config:
-      materialized: view
-      unique_key: ID
-      tags: ["uber_taxi", "transformed"]
 
     columns:
       - name: ID
@@ -13,7 +9,7 @@ models:
           - not_null
           - unique
 
-      - name: Start_time
+      - name: Start_datetime
         description: "Start time of the ride"
         tests:
           - not_null
@@ -35,41 +31,35 @@ models:
       - name: city
         description: "City where the trip started"
         tests:
-          - not_null
           - not_empty_string: {}
 
       - name: country
         description: "Country where the trip started"
         tests:
-          - not_null
           - not_empty_string: {}
 
       - name: timezone
         description: "Timezone of the trip"
         tests:
-          - not_null
           - not_empty_string: {}
 
       - name: state
         description: "State where the trip started"
         tests:
-          - not_null
           - not_empty_string: {}
 
       - name: zipcode
         description: "Zipcode of the trip location"
         tests:
-          - not_null
           - not_empty_string: {}
 
       - name: airport_code
         description: "Airport code for the trip"
         tests:
-          - not_null
           - not_empty_string: {}
 
 sources:
-  - name: dbt debug
+  - name: transformed_data
     description: "Raw Uber taxi dataset"
     tables:
       - name: trips

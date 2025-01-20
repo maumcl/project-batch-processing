@@ -13,7 +13,7 @@
 - Docker
 
 ### Configure credentials
-Edit the env file for your TARGET in `integration_tests/.env/[TARGET].env`.
+Edit the env file for your TARGET in `integration_tests/.env/[TARGET].env`.  These will be used for your profiles.yml.
 
 Load the environment variables:
 ```shell
@@ -78,30 +78,18 @@ make test target=postgres
 
 or, to run tests for a single model:
 ```shell
-make test target=[postgres|redshift|...] [models=...] [seeds=...]
+make test target=[postgres|redshift|...]
 ```
 
 or more specific:
 
 ```shell
-make test target=postgres models=sql.test_star seeds=sql.data_star
+make test target=postgres
 ```
-
-Specying `models=` and `seeds=` is optional, however _if_ you specify `seeds`, you have to specify `models` too.
 
 Where possible, targets are being run in docker containers (this works for Postgres or in the future Spark for example). For managed services like Snowflake, BigQuery and Redshift this is not possible, hence your own configuration for these services has to be provided in the appropriate env files in `integration_tests/.env/[TARGET].env`
 
 ### Creating a new integration test
-
-#### Set up profiles
-Do either one of the following:
-1. Use `DBT_PROFILES_DIR`
-    ```shell
-    cp integration_tests/ci/sample.profiles.yml integration_tests/profiles.yml
-    export DBT_PROFILES_DIR=$(cd integration_tests && pwd)
-    ```
-2. Use `~/.dbt/profiles.yml`
-    - Copy contents from `integration_tests/ci/sample.profiles.yml` into `~/.dbt/profiles.yml`.
 
 #### Add your integration test
 This directory contains an example dbt project which tests the macros in the `dbt-utils` package. An integration test typically involves making 1) a new seed file 2) a new model file 3) a generic test to assert anticipated behaviour.

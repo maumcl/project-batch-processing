@@ -1,5 +1,8 @@
 
--- The transformations include:
+
+  create or replace view `gcp-streaming-pipeline`.`project_parquet`.`transformed_data`
+  OPTIONS()
+  as -- The transformations include:
 -- 1. Converting Unix timestamps (Start_time, End_time) to DATETIME.
 -- 2. Converting distance from miles to kilometers.
 -- 3. Converting temperature from Fahrenheit to Celsius.
@@ -16,8 +19,8 @@
     distance_mi * 1.60934 AS distance_km,  -- Conversion: Miles to Kilometers.
     temperature_f,
     (temperature_f - 32) * 5/9 AS temperature_c,  -- Conversion: Fahrenheit to Celsius.
-    NULLIF(Weather_Condition, 'Unknown') AS Weather_Condition,  
-    NULLIF(Sunrise_Sunset, 'Unknown') AS Sunrise_Sunset,
+    NULLIF(Weather_Condition, '') AS Weather_Condition,  
+    NULLIF(Sunrise_Sunset, '') AS Sunrise_Sunset,
     NULLIF(Description, '') AS Description,  
     NULLIF(Street, '') AS Street,  
     NULLIF(City, '') AS City,  
@@ -28,4 +31,5 @@
     NULLIF(Timezone, '') AS Timezone,  
     NULLIF(Airport_Code, '') AS Airport_Code
   FROM
-    `gcp-streaming-pipeline.project_parquet.cab_trips`
+    `gcp-streaming-pipeline.project_parquet.cab_trips`;
+
