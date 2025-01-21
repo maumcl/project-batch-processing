@@ -1,4 +1,11 @@
 models:
+
+  - name: uber_top_cities
+    columns:
+      - name: total_rides
+        tests:
+          - unique
+
   - name: transformed_data
     description: "Uber Taxi Data with transformed columns"
 
@@ -66,3 +73,5 @@ sources:
         description: "Trip records from Uber"
         config:
           enabled: true
+
+          
