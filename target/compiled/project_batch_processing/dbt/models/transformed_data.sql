@@ -1,4 +1,3 @@
-
 -- The transformations include:
 -- 1. Converting Unix timestamps (Start_time, End_time) to DATETIME.
 -- 2. Converting distance from miles to kilometers.
@@ -29,4 +28,3 @@
     NULLIF(Airport_Code, '') AS Airport_Code
   FROM
     `gcp-streaming-pipeline.project_parquet.cab_trips`
-

@@ -16,10 +16,13 @@ configs/gcp*
 # Data
 data/raw/
 data/processed/
+data/parquet_modified_data
+data/processed-from-cloud
 
 # Logs
 logs/
 
 # Environment Files
 *.env
+
 
