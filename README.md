@@ -29,9 +29,8 @@ Deploy the pipeline in a production environment and ensure monitoring and scalab
 ## Technologies Used
 
 - **PySpark**: For data processing and transformation
-- **Google Cloud Platform (GCP)**: For cloud storage and BigQuery database
+- **Google Cloud Platform (GCP)**: For cloud storage, BigQuery and Looker Studio
 - **Data Build Tool (DBT)**: For testing, modeling, and transforming data
-- **Apache Airflow**: For workflow automation
  
 ## Installation
 
@@ -53,13 +52,13 @@ Deploy the pipeline in a production environment and ensure monitoring and scalab
 ### Extract Data
 Run the script to download data from GCP:
 ```bash
-python scripts/extract.py
+python scripts/extract_data.py
 ```
 
 ### Transform Data
 Process and clean the data:
 ```bash
-python scripts/transform.py
+python scripts/transform_data.py
 ```
 
 ### Load Data
