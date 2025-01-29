@@ -4,35 +4,11 @@ Still under construction
 
 This project demonstrates a comprehensive data pipeline workflow, including extracting data, transforming it, and loading it into a database for further analysis. The pipeline incorporates cloud storage, local processing, and database integration, using tools like PySpark and Google BigQuery.
 
-## Project Structure
-
-```
-project-batch-processing/
-├── data/
-│   ├── raw/                   # Raw data downloaded from the source
-│   ├── processed/             # Data after initial processing
-│   └── processed-form-cloud/  # Final transformed data ready for database loading
-├── notebooks/                 # Jupyter notebooks for data exploration and validation
-│   ├── parquet_modified.ipynb # Transform the column names to fit in the BigQuery
-├── scripts/                   # Python scripts for pipeline stages
-│   ├── extract_data.py        # Extract data from cloud storage
-│   ├── process_data.py        # Process the raw data
-│   ├── transform_data.py      # Transform data locally using PySpark
-│   ├── load_to_bigquery.py    # Load transformed data into BigQuery
-│   └── save_to_gcp.py         # Upload files to Google Cloud Storage
-│   ├── upload_to_aws.py       # Upload files to AWS S3
-│   ├── load_to_bigquery.py    # Load transformed data into BigQuery
-├── README.md                  # Project documentation
-├── requirements.txt           # Python dependencies
-└── .gitignore                 # Ignored files and directories
-```
-
-## Steps in the Project
 
 ## Steps in the Project
 
 ### 1. Download and Upload Uber Taxi Dataset
-The project starts with downloading the Uber Taxi Yellow dataset and uploading it to Google Cloud Storage after initial processing with PySpark. This step ensures the data is clean and ready for further transformations - of course, picking the columns we may use during our analysis.
+The project starts with downloading the Uber Taxi Yellow dataset and uploading it to Google Cloud Storage after initial processing with PySpark. This step ensures the data is clean and ready for further transformations - of course, picking the columns we're gonna use during our analysis.
 
 ### 2. Extract Cleaned Data
 Extract the cleaned Parquet files from Google Cloud Storage to a local directory for further processing.
@@ -43,25 +19,22 @@ Perform additional transformations on the Parquet files using PySpark. This incl
 ### 4. Load Data into a Database
 Upload the transformed data to a BigQuery database for analysis and visualization.
 
-### 5. Integrate Streaming with Kafka
-(Optional) Implement a streaming pipeline using Apache Kafka for real-time data ingestion.
+### 5. Create Aggregations and Views for Reporting
+Created aggregated views and visualizations on Looker Studio for easier reporting and business insights.
 
 ### 6. Set Up an ETL Workflow
 Create an ETL workflow using a scheduler like Apache Airflow to automate the pipeline.
 
-### 7. Document Your Project
-Maintain comprehensive documentation of the project, including how to set up, run, and maintain the pipeline.
-
-### 8. Deploy the Pipeline
+### 7. Deploy the Pipeline
 Deploy the pipeline in a production environment and ensure monitoring and scalability.
 
 ## Technologies Used
 
 - **PySpark**: For data processing and transformation
 - **Google Cloud Platform (GCP)**: For cloud storage and BigQuery database
-- **Apache Kafka**: For streaming data (optional)
-- **Apache Airflow**: For workflow automation (optional)
-
+- **Data Build Tool (DBT)**: For testing, modeling, and transforming data
+- **Apache Airflow**: For workflow automation
+ 
 ## Installation
 
 1. Clone the repository:

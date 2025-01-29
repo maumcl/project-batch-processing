@@ -1,31 +1,17 @@
 name: 'project_batch_processing'  # Name of your project
-version: '1.0'  # Version of your project
+version: '1.0' 
 profile: 'project_batch_processing'  # The name of your profile in profiles.yml
 
 # Paths to directories and settings
 model-paths: ["dbt/models"]
-analysis-paths: ["dbt/analyses"]
-test-paths: ["dbt/tests"]
 macro-paths: ["dbt/macros"]
-snapshot-paths: ["dbt/snapshots"]
 
-
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
 models:
-  dbtcourse:
-    +materialized: view
-    +post-hook:
-      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
-    dim:
-      +materialized: table
-    src:
-      +materialized: ephemeral
-
+  project_batch_processing:
+    transformed_data:
+      materialized: view 
+     
+# Clean-targets - directories to clean during the dbt run
 clean-targets:
   - "target"
   - "dbt_modules"
-  
-
-  
