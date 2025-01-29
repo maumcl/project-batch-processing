@@ -1,6 +1,6 @@
 # Data Pipeline Project
 
-This project demonstrates a comprehensive data pipeline workflow, including extracting data, transforming it, and loading it into a database for further analysis. The pipeline incorporates cloud storage, local processing, and database integration, using tools like PySpark and Google BigQuery.
+This project demonstrates a comprehensive data pipeline workflow, including extracting data, transforming it, and loading it into a database for further analysis. The pipeline incorporates cloud storage, local processing, and database integration, using tools like PySpark, dbt Google BigQuery.
 
 
 ## Steps in the Project
