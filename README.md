@@ -23,9 +23,6 @@ Created aggregated views and visualizations on Looker Studio for easier reportin
 ### 6. Set Up an ETL Workflow
 Create an ETL workflow using a scheduler like Apache Airflow to automate the pipeline.
 
-### 7. Deploy the Pipeline
-Deploy the pipeline in a production environment and ensure monitoring and scalability.
-
 ## Technologies Used
 
 - **PySpark**: For data processing and transformation
